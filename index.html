@@ -1,0 +1,971 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BYTES KING - Shop USB pen drives, memory cards and digital storage from HP, SanDisk and Kingston.">
+<title>BYTES KING | Your Data, Our Priority</title>
+
+<style>
+:root {
+  --navy: #06152e;
+  --blue: #0866ff;
+  --gold: #ffbd08;
+  --white: #ffffff;
+  --light: #f3f7ff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: #10213c;
+}
+
+a { text-decoration: none; color: inherit; }
+
+button, input, select { font: inherit; }
+
+button { cursor: pointer; }
+
+header {
+  background: var(--navy);
+  color: white;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 20px #0003;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo span { color: var(--gold); }
+
+.tagline {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #b8c8e7;
+  margin-top: 5px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav a {
+  font-size: 13px;
+  font-weight: bold;
+  transition: color .2s;
+}
+
+nav a:hover { color: var(--gold); }
+
+.search {
+  padding: 11px 13px;
+  border: 1px solid #d8e2f5;
+  border-radius: 25px;
+  width: 180px;
+  outline-color: var(--gold);
+}
+
+.hero {
+  min-height: 410px;
+  padding: 65px 7%;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    radial-gradient(ellipse at 75% 40%, #0756bd 0, transparent 42%),
+    linear-gradient(120deg, #020812, #071e46 65%, #10052d);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero:after {
+  content: "USB 3.0";
+  position: absolute;
+  right: -15px;
+  bottom: -50px;
+  font-size: clamp(90px, 18vw, 210px);
+  font-weight: 900;
+  color: #ffffff08;
+  pointer-events: none;
+}
+
+.hero-content { max-width: 610px; z-index: 1; }
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 1.05;
+  margin: 18px 0;
+}
+
+.hero h1 span { color: var(--gold); }
+
+.hero p {
+  color: #d5e2fa;
+  line-height: 1.8;
+  max-width: 490px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 27px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 8px;
+  padding: 13px 21px;
+  display: inline-block;
+  font-weight: bold;
+  transition: transform .2s, filter .2s;
+}
+
+.btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
+
+.gold-btn { background: var(--gold); color: #111827; }
+
+.blue-btn { background: var(--blue); color: white; }
+
+.outline-btn {
+  color: white;
+  border: 1px solid #8ca8d5;
+  background: transparent;
+}
+
+.trust-strip {
+  background: #fff;
+  padding: 18px 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px 45px;
+  border-bottom: 1px solid #dce7f7;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.trust-strip span { color: #14365e; }
+
+section { padding: 55px 5%; }
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: clamp(25px, 4vw, 34px);
+  color: var(--navy);
+  margin-bottom: 9px;
+}
+
+.section-title p { color: #61728b; font-size: 14px; }
+
+.brands {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.brand-card {
+  background: white;
+  padding: 27px 15px;
+  text-align: center;
+  border: 1px solid #dce5f4;
+  border-radius: 12px;
+  transition: .25s;
+}
+
+.brand-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px #173d7014;
+}
+
+.brand-name {
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.hp { color: #0879d9; }
+.sandisk { color: #d71928; }
+.kingston { color: #192b48; }
+
+.brand-card p { font-size: 13px; color: #66758c; }
+
+.shop-section { background: #061329; color: white; }
+
+.shop-section .section-title h2 { color: white; }
+.shop-section .section-title p { color: #b9c9e4; }
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.category-card {
+  padding: 26px 15px;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid #345071;
+  background: linear-gradient(145deg, #102b51, #08142a);
+}
+
+.category-card .symbol {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.category-card h3 { margin-bottom: 10px; font-size: 17px; }
+.category-card p { color: #bdcce1; font-size: 12px; margin-bottom: 20px; }
+
+.products-section { background: #f5f8ff; }
+
+.filters {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filters input, .filters select {
+  border: 1px solid #d3deef;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: white;
+  min-width: 180px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #e0e8f5;
+  border-radius: 12px;
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 18px #173c7009;
+  transition: .25s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px #173c7017;
+}
+
+.product-visual {
+  height: 145px;
+  background: linear-gradient(145deg, #f0f5ff, #fff);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.product-visual img {
+  max-width: 90%;
+  max-height: 135px;
+  object-fit: contain;
+}
+
+.product-visual .fallback {
+  font-size: 46px;
+  font-weight: 900;
+  color: #0b376f;
+}
+
+.product-card h3 { font-size: 15px; margin-bottom: 9px; }
+.product-card .model { color: #6b7a91; font-size: 12px; margin-bottom: 8px; }
+.product-card .specs { color: #4e6079; font-size: 12px; line-height: 1.6; }
+
+.product-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 17px;
+}
+
+.product-bottom button {
+  flex: 1;
+  min-width: 100px;
+  font-size: 12px;
+  padding: 11px 8px;
+}
+
+.product-bottom .details {
+  background: #edf3ff;
+  color: #1554a7;
+  border: 1px solid #d7e5ff;
+  border-radius: 7px;
+}
+
+.product-bottom .order {
+  background: var(--blue);
+  color: white;
+  border: 0;
+  border-radius: 7px;
+}
+
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+  grid-column: 1 / -1;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.why-item { padding: 18px 8px; }
+.why-item .symbol { font-size: 32px; margin-bottom: 12px; }
+.why-item h3 { font-size: 15px; margin-bottom: 8px; }
+.why-item p { font-size: 12px; color: #65748b; line-height: 1.6; }
+
+.about {
+  background: linear-gradient(120deg, #07172e, #102f5e);
+  color: white;
+  text-align: center;
+}
+
+.about h2 { font-size: 30px; margin-bottom: 18px; }
+.about p { max-width: 720px; margin: 0 auto; color: #d0ddf1; line-height: 1.9; }
+
+.contact-section { background: white; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.contact-card {
+  padding: 25px;
+  border: 1px solid #dce6f5;
+  border-radius: 12px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.contact-card .symbol { font-size: 30px; margin-bottom: 12px; }
+.contact-card h3 { font-size: 16px; margin-bottom: 10px; }
+.contact-card p { font-size: 13px; color: #5f7089; line-height: 1.8; }
+
+footer {
+  background: #020b18;
+  color: white;
+  padding: 30px 5% 20px;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding-bottom: 25px;
+}
+
+footer p { color: #b9c8de; font-size: 13px; line-height: 1.9; }
+
+footer a:hover { color: var(--gold); }
+
+.footer-bottom {
+  border-top: 1px solid #263852;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #aebed3;
+}
+
+.cart-count {
+  background: var(--gold);
+  color: #111;
+  border-radius: 50%;
+  padding: 3px 7px;
+  font-size: 12px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #09254b;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px #0003;
+  display: none;
+  z-index: 20;
+  max-width: 320px;
+}
+
+@media (max-width: 900px) {
+  header { justify-content: center; }
+  nav { justify-content: center; }
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .categories { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  header { padding: 15px 4%; }
+  nav { gap: 12px; }
+  nav a { font-size: 12px; }
+  .search { width: 100%; }
+  .hero { padding: 55px 6%; min-height: 360px; }
+  section { padding: 40px 5%; }
+  .brands, .contact-grid { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .product-card { padding: 10px; }
+  .product-visual { height: 110px; }
+  .product-visual img { max-height: 100px; }
+  .product-card h3 { font-size: 13px; }
+  .product-bottom button { min-width: 0; }
+  .categories { gap: 10px; }
+  .category-card { padding: 20px 8px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="#home" aria-label="BYTES KING home">
+    <div class="logo">♛ BYTES <span>KING</span></div>
+    <div class="tagline">YOUR DATA · OUR PRIORITY</div>
+  </a>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Pen Drives</a>
+    <a href="#categories">Categories</a>
+    <a href="#brands">Brands</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <input id="headerSearch" class="search"
+         type="search" placeholder="Search products..."
+         aria-label="Search products">
+
+  <a href="#products" aria-label="Shopping cart">
+    🛒 <span class="cart-count" id="cartCount">0</span>
+  </a>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">Premium Digital Storage</div>
+    <h1>WELCOME TO<br>BYTES <span>KING</span></h1>
+    <p>Small size. Big storage. Discover USB pen drives and memory cards from trusted brands for your everyday digital life.</p>
+    <div class="hero-buttons">
+      <a class="btn gold-btn" href="#products">EXPLORE PRODUCTS →</a>
+      <a class="btn outline-btn" href="#contact">CONTACT US</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <span>✓ Trusted Brand Selection</span>
+  <span>✓ Multiple Storage Capacities</span>
+  <span>✓ Convenient Online Enquiries</span>
+  <span>✓ Customer Support</span>
+</div>
+
+<section id="brands">
+  <div class="section-title">
+    <h2>Our Top Brands</h2>
+    <p>Explore storage products from leading manufacturers.</p>
+  </div>
+
+  <div class="brands">
+    <a class="brand-card" href="#products" data-brand-link="HP">
+      <div class="brand-name hp">hp</div>
+      <h3>HP Pen Drives</h3>
+      <p>Portable · Practical · Everyday Storage</p>
+    </a>
+
+    <a class="brand-card" href="#products" data-brand-link="SanDisk">
+      <div class="brand-name sandisk">SanDisk</div>
+      <h3>SanDisk Pen Drives</h3>
+      <p>Compact · Convenient · Versatile</p>
+    </a>
+
+    <a class="brand-card" href="#products" data-brand-link="Kingston">
+      <div class="brand-name kingston">Kingston</div>
+      <h3>Kingston Pen Drives</h3>
+      <p>Portable · Reliable Storage Options</p>
+    </a>
+  </div>
+</section>
+
+<section class="shop-section" id="categories">
+  <div class="section-title">
+    <h2>Shop by Category</h2>
+    <p>Find storage for your devices and daily needs.</p>
+  </div>
+
+  <div class="categories">
+    <div class="category-card">
+      <div class="symbol">💾</div>
+      <h3>USB Pen Drives</h3>
+      <p>32GB · 64GB · 128GB</p>
+      <a href="#products" class="btn gold-btn">Explore</a>
+    </div>
+
+    <div class="category-card">
+      <div class="symbol">⚡</div>
+      <h3>USB 3.0 Drives</h3>
+      <p>Options for compatible devices</p>
+      <a href="#products" class="btn gold-btn">Explore</a>
+    </div>
+
+    <div class="category-card">
+      <div class="symbol">🔌</div>
+      <h3>OTG & Dual Drives</h3>
+      <p>For compatible USB devices</p>
+      <a href="#products" class="btn gold-btn">Explore</a>
+    </div>
+
+    <div class="category-card">
+      <div class="symbol">💳</div>
+      <h3>Memory Cards</h3>
+      <p>MicroSD and SD storage</p>
+      <a href="#products" class="btn gold-btn"
+         onclick="setMemoryFilter()">Explore</a>
+    </div>
+  </div>
+</section>
+
+<section class="products-section" id="products">
+  <div class="section-title">
+    <h2>Featured Products</h2>
+    <p>Explore different models and storage capacities.</p>
+  </div>
+
+  <div class="filters">
+    <input type="search" id="productSearch"
+           placeholder="Search brand or model..."
+           aria-label="Search brand or model">
+
+    <select id="brandFilter" aria-label="Filter by brand">
+      <option value="all">All Brands</option>
+      <option value="HP">HP</option>
+      <option value="SanDisk">SanDisk</option>
+      <option value="Kingston">Kingston</option>
+    </select>
+
+    <select id="typeFilter" aria-label="Filter by product type">
+      <option value="all">All Categories</option>
+      <option value="pen">Pen Drives</option>
+      <option value="memory">Memory Cards</option>
+    </select>
+
+    <select id="capacityFilter" aria-label="Filter by capacity">
+      <option value="all">All Capacities</option>
+      <option value="32GB">32GB</option>
+      <option value="64GB">64GB</option>
+      <option value="128GB">128GB</option>
+      <option value="256GB">256GB</option>
+    </select>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+
+    <article class="product-card" data-brand="HP" data-type="pen"
+             data-capacity="32GB 64GB 128GB">
+      <div class="product-visual">
+        <div class="fallback">hp</div>
+      </div>
+      <h3>HP USB 3.0 Pen Drive</h3>
+      <p class="model">Model: Enter verified model number</p>
+      <p class="specs">Capacity: 32GB / 64GB / 128GB<br>Interface: USB 3.0, if applicable</p>
+      <div class="product-bottom">
+        <button class="details" onclick="showDetails(this)">Details</button>
+        <button class="order" onclick="orderProduct(this)">Enquire</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-brand="SanDisk" data-type="pen"
+             data-capacity="32GB 64GB 128GB">
+      <div class="product-visual">
+        <div class="fallback sandisk">SanDisk</div>
+      </div>
+      <h3>SanDisk Ultra Flair</h3>
+      <p class="model">Model: Enter verified model number</p>
+      <p class="specs">Capacity: 32GB / 64GB / 128GB<br>USB interface: Verify model specifications</p>
+      <div class="product-bottom">
+        <button class="details" onclick="showDetails(this)">Details</button>
+        <button class="order" onclick="orderProduct(this)">Enquire</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-brand="Kingston" data-type="pen"
+             data-capacity="32GB 64GB 128GB">
+      <div class="product-visual">
+        <div class="fallback kingston">Kingston</div>
+      </div>
+      <h3>Kingston DataTraveler</h3>
+      <p class="model">Model: Enter verified model number</p>
+      <p class="specs">Capacity: 32GB / 64GB / 128GB<br>Interface: Confirm the exact model</p>
+      <div class="product-bottom">
+        <button class="details" onclick="showDetails(this)">Details</button>
+        <button class="order" onclick="orderProduct(this)">Enquire</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-brand="HP" data-type="pen"
+             data-capacity="32GB 64GB 128GB">
+      <div class="product-visual">
+        <div class="fallback">HP USB</div>
+      </div>
+      <h3>HP Dual / OTG Drive</h3>
+      <p class="model">Model: Enter verified model number</p>
+      <p class="specs">Capacity: Multiple options<br>Connector: Confirm compatibility</p>
+      <div class="product-bottom">
+        <button class="details" onclick="showDetails(this)">Details</button>
+        <button class="order" onclick="orderProduct(this)">Enquire</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-brand="SanDisk" data-type="memory"
+             data-capacity="64GB 128GB 256GB">
+      <div class="product-visual">
+        <div class="fallback sandisk">microSD</div>
+      </div>
+      <h3>SanDisk MicroSD Card</h3>
+      <p class="model">Model: Enter verified model number</p>
+      <p class="specs">Capacity: 64GB / 128GB / 256GB<br>Check device compatibility</p>
+      <div class="product-bottom">
+        <button class="details" onclick="showDetails(this)">Details</button>
+        <button class="order" onclick="orderProduct(this)">Enquire</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-brand="Kingston" data-type="memory"
+             data-capacity="64GB 128GB 256GB">
+      <div class="product-visual">
+        <div class="fallback kingston">SD CARD</div>
+      </div>
+      <h3>Kingston Memory Card</h3>
+      <p class="model">Model: Enter verified model number</p>
+      <p class="specs">Capacity: 64GB / 128GB / 256GB<br>Verify speed class and compatibility</p>
+      <div class="product-bottom">
+        <button class="details" onclick="showDetails(this)">Details</button>
+        <button class="order" onclick="orderProduct(this)">Enquire</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-brand="SanDisk" data-type="pen"
+             data-capacity="32GB 64GB 128GB">
+      <div class="product-visual">
+        <div class="fallback sandisk">Cruzer</div>
+      </div>
+      <h3>SanDisk Cruzer Series</h3>
+      <p class="model">Model: Enter verified model number</p>
+      <p class="specs">Capacity: Multiple options<br>Confirm exact model availability</p>
+      <div class="product-bottom">
+        <button class="details" onclick="showDetails(this)">Details</button>
+        <button class="order" onclick="orderProduct(this)">Enquire</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-brand="Kingston" data-type="pen"
+             data-capacity="32GB 64GB 128GB">
+      <div class="product-visual">
+        <div class="fallback kingston">DataTraveler</div>
+      </div>
+      <h3>Kingston USB 3.0 Drive</h3>
+      <p class="model">Model: Enter verified model number</p>
+      <p class="specs">Capacity: Multiple options<br>Confirm connector and interface</p>
+      <div class="product-bottom">
+        <button class="details" onclick="showDetails(this)">Details</button>
+        <button class="order" onclick="orderProduct(this)">Enquire</button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Why Choose BYTES KING?</h2>
+    <p>A straightforward shopping experience for digital storage.</p>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="symbol">🛡️</div>
+      <h3>Genuine Products</h3>
+      <p>Source authentic products from trusted suppliers and provide valid invoices.</p>
+    </div>
+    <div class="why-item">
+      <div class="symbol">💰</div>
+      <h3>Competitive Pricing</h3>
+      <p>Compare storage options and prices to suit your needs.</p>
+    </div>
+    <div class="why-item">
+      <div class="symbol">📦</div>
+      <h3>Order Assistance</h3>
+      <p>Contact us to confirm stock, delivery options and order details.</p>
+    </div>
+    <div class="why-item">
+      <div class="symbol">💬</div>
+      <h3>Customer Support</h3>
+      <p>Reach us by email or WhatsApp for product enquiries.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About BYTES KING</h2>
+  <p>
+    BYTES KING is a digital storage brand concept focused on pen drives,
+    memory cards and portable storage solutions. Our goal is to make it
+    easier for customers to explore products from HP, SanDisk and Kingston,
+    compare models and contact us for current prices and availability.
+    Your Data, Our Priority.
+  </p>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="section-title">
+    <h2>Get in Touch</h2>
+    <p>Need a model, bulk quantity or price quotation? Contact BYTES KING.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="symbol">✉️</div>
+      <h3>Email Us</h3>
+      <p><a href="mailto:shad.jd@gmail.com">shad.jd@gmail.com</a></p>
+    </div>
+
+    <div class="contact-card">
+      <div class="symbol">🟢</div>
+      <h3>WhatsApp Us</h3>
+      <p><a href="https://wa.me/917652004861"
+         target="_blank" rel="noopener noreferrer">+91 76520 04861</a></p>
+    </div>
+
+    <div class="contact-card">
+      <div class="symbol">🌐</div>
+      <h3>Our Website</h3>
+      <p><a href="https://www.bytesking.com"
+         target="_blank" rel="noopener noreferrer">www.bytesking.com</a></p>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:28px;">
+    <a class="btn blue-btn"
+       href="https://wa.me/917652004861?text=Hello%20BYTES%20KING%2C%20I%20want%20to%20enquire%20about%20your%20products."
+       target="_blank" rel="noopener noreferrer">
+      CHAT ON WHATSAPP →
+    </a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="logo">♛ BYTES <span>KING</span></div>
+      <div class="tagline">YOUR DATA · OUR PRIORITY</div>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:shad.jd@gmail.com">shad.jd@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/917652004861">7652004861</a></p>
+    </div>
+
+    <div>
+      <h3>Follow BYTES KING</h3>
+      <p>Facebook page: BYTES KING</p>
+      <p>Replace this link with your actual Facebook page URL.</p>
+      <p><a href="https://www.facebook.com/" target="_blank"
+            rel="noopener noreferrer">Visit Facebook →</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> BYTES KING. All rights reserved.</span>
+    <span>Your Data · Our Priority</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const searchInputs = [
+  document.getElementById("headerSearch"),
+  document.getElementById("productSearch")
+];
+
+const brandFilter = document.getElementById("brandFilter");
+const typeFilter = document.getElementById("typeFilter");
+const capacityFilter = document.getElementById("capacityFilter");
+const cards = [...document.querySelectorAll(".product-card")];
+
+let cart = 0;
+let toastTimer;
+
+function filterProducts() {
+  const query = searchInputs
+    .map(input => input.value.trim().toLowerCase())
+    .find(Boolean) || "";
+
+  const brand = brandFilter.value;
+  const type = typeFilter.value;
+  const capacity = capacityFilter.value;
+
+  let visible = 0;
+
+  cards.forEach(card => {
+    const matchesQuery = card.textContent.toLowerCase().includes(query);
+    const matchesBrand = brand === "all" || card.dataset.brand === brand;
+    const matchesType = type === "all" || card.dataset.type === type;
+    const matchesCapacity = capacity === "all" ||
+      card.dataset.capacity.split(" ").includes(capacity);
+
+    const show = matchesQuery && matchesBrand &&
+                 matchesType && matchesCapacity;
+
+    card.hidden = !show;
+    if (show) visible++;
+  });
+
+  let empty = document.getElementById("emptyMessage");
+
+  if (!visible) {
+    if (!empty) {
+      empty = document.createElement("p");
+      empty.id = "emptyMessage";
+      empty.className = "empty";
+      empty.textContent = "No matching products. Try another search.";
+      document.getElementById("productGrid").appendChild(empty);
+    }
+  } else if (empty) {
+    empty.remove();
+  }
+}
+
+searchInputs.forEach(input => {
+  input.addEventListener("input", () => {
+    searchInputs.forEach(other => {
+      if (other !== input) other.value = input.value;
+    });
+    filterProducts();
+  });
+});
+
+[brandFilter, typeFilter, capacityFilter].forEach(select => {
+  select.addEventListener("change", filterProducts);
+});
+
+document.querySelectorAll("[data-brand-link]").forEach(link => {
+  link.addEventListener("click", () => {
+    brandFilter.value = link.dataset.brandLink;
+    filterProducts();
+  });
+});
+
+function setMemoryFilter() {
+  typeFilter.value = "memory";
+  filterProducts();
+}
+
+function notify(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.style.display = "block";
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.style.display = "none";
+  }, 3000);
+}
+
+function showDetails(button) {
+  const card = button.closest(".product-card");
+  const title = card.querySelector("h3").textContent;
+  const details = card.querySelector(".specs").innerText;
+  notify(title + " — " + details);
+}
+
+function orderProduct(button) {
+  const card = button.closest(".product-card");
+  const title = card.querySelector("h3").textContent;
+  const model = card.querySelector(".model").textContent;
+
+  const message =
+    "Hello BYTES KING! I want to enquire about: " +
+    title + ". " + model +
+    ". Please share the price, availability and delivery details.";
+
+  window.open(
+    "https://wa.me/917652004861?text=" + encodeURIComponent(message),
+    "_blank",
+    "noopener,noreferrer"
+  );
+}
+
+document.getElementById("cartCount").parentElement.addEventListener(
+  "click",
+  event => {
+    event.preventDefault();
+    notify("To place an order, select a product and click Enquire on WhatsApp.");
+  }
+);
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
